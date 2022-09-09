@@ -15,7 +15,7 @@ I update the docker-compose.yml file form pyrmon/nightscout-docker. Thank you!
 * I have included the Dockerfile that I used, but it is for refrence only
 * First Clone this repository to your server and go into the folder
 ```sh
-git clone https://github.com/florianschi909/nightscout-docker && cd nightscout-docker
+git clone https://github.com/diyaps/nightscout-docker && cd nightscout-docker
 ```
 * Edit the docker-compose-amd.yml file
     * Change the API_SECRET value to a password with the min length of 12, I don't know if all special characters are okay
