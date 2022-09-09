@@ -1,14 +1,8 @@
 # nightscout-docker
-Comprehensive Docker Setup for Nightscout CGM Monitor on Raspberry Pi 4 or any Linux Computer/Server
+Nightscout docker with remote overrides and loop support for ARM64 v8 including Raspberry Pi 4 and Xiaomi router AX9000
 
 ## Credit
-I have gotten both the Dockerfile and the docker-compose.yml from liske/cgm-remote-monitor-docker, thank you!
-
-## Backstory
-My girlfriend is a type 1 diabetic and so I got into CGM Monitoring.
-I wanted to create a guide of how I host my own Nightscout server under my own domain.
-It is very easy and everybody that owns a Linux Server (for example a Raspberry Pi 4).
-I will first explain how to setup Nightscout and later also how to setup Nginx so you can host Nightscout securely. If you don't own a domain you can use a free one. I will create another Readme later on how to do that. If you have any questions feel free to just write an e-mail to florian@schickel.me and I can try my best to help you.
+I update the docker-compose.yml file form pyrmon/nightscout-docker. Thank you!
 
 ## Requirements for this to work
 
@@ -27,15 +21,24 @@ git clone https://github.com/florianschi909/nightscout-docker && cd nightscout-d
     * Change the API_SECRET value to a password with the min length of 12, I don't know if all special characters are okay
     * Change the BASE_URL to the webadress you want to access Nightscout from later on 
         * if you don't know this yet then wait for my instructions (which I will write later) where I tell you how you can get a free domain
-    * If you don't use mg/dl then you can change DISPLAY_UNITS value to mmol
+    * Change the LOOP_APNS_KEY value to the ENTIRE contents of your downloaded Apple .p8 file including the BEGIN and END lines.
+    * Change the LOOP_APNS_KEY_ID to the string of characters on the .p8 download file immediately following the underscore ( _ ) and not including the file extension ( .p8 ), or you can get it from your saved key in your developer account.
+    * Change the LOOP_DEVELOPER_TEAM_ID value to the string where you get from Loop app signing or in your developer account's top right corner under your name.
+    * If you don't use mmol/L then you can change DISPLAY_UNITS value to mg/dl
 ```Dockerfile
       # admin secret
       - API_SECRET=xxxxxxxxxxxx
       # the URL to this Nightscout instance
       - BASE_URL=https://ns.xxxxx.com
+      # The content of your Apple p8 key file.
+      - LOOP_APNS_KEY=xxxxxxxxxxxx
+      # The ID of your Apple p8 key.
+      - LOOP_APNS_KEY_ID=xxxxxxxxxxxx
+      # The team ID of your apple developer account.
+      - LOOP_DEVELOPER_TEAM_ID=xxxxxxxxxxxx
       ...
       # use SI units by default
-      - DISPLAY_UNITS=mg/dl
+      - DISPLAY_UNITS=mmol/L
 ```
 * This is it. Now follow this command and your Nightscout is running on the webadress http://localhost:1337/
 ```sh
