@@ -1,5 +1,5 @@
 # nightscout-docker
-Nightscout docker with remote overrides and loop support for ARM64 v8 including Raspberry Pi 4 and Xiaomi router AX9000
+Nightscout docker with remote overrides and loop support for AMD64, ARM64 v8 including Raspberry Pi 4 and Xiaomi router AX9000
 
 ## Credit
 I update the docker-compose.yml file form pyrmon/nightscout-docker. Thank you!
