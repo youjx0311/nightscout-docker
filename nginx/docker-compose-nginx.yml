@@ -11,29 +11,12 @@ services:
       # Add any other Stream port you want to expose
       # - '21:21' # FTP
     environment:
-      DB_MYSQL_HOST: "db"
-      DB_MYSQL_PORT: 3306
-      DB_MYSQL_USER: "npm"
-      DB_MYSQL_PASSWORD: "npm"
-      DB_MYSQL_NAME: "npm"
-      # Uncomment this if IPv6 is not enabled on your host
-      # DISABLE_IPV6: 'true'
+      DB_SQLITE_FILE: '/data/database.sqlite'
+      DISABLE_IPV6: 'true'
     volumes:
       # For AX9000, please use "/mnt/docker_disk/mi_docker/nginxproxymanager/data:/data/db"
       - ./data:/data
       # For AX9000, please use "/mnt/docker_disk/mi_docker/nginxproxymanager/letsencrypt:/data/db"
       - ./letsencrypt:/etc/letsencrypt
-    depends_on:
-      - db
-
-  db:
-    image: 'yobasystems/alpine-mariadb:latest'
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: 'npm'
-      MYSQL_DATABASE: 'npm'
-      MYSQL_USER: 'npm'
-      MYSQL_PASSWORD: 'npm'
-    volumes:
-      # For AX9000, please use "/mnt/docker_disk/mi_docker/nginxproxymanager/data/mysql:/data/db"
-      - ./data/mysql:/var/lib/mysql
+      # For AX9000, please use "/mnt/docker_disk/mi_docker/nginxproxymanager/config.json:/app/config/production.json"
+      - ./config.json:/app/config/production.json

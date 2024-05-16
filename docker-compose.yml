@@ -18,10 +18,10 @@ services:
       AUTH_DEFAULT_ROLES: "denied"
       # Remove the next lines in case you don't need remote override.
       # The content of your Apple p8 key file.
-      LOOP_APNS_KEY: ""
-      LOOP_APNS_KEY_ID: ""
+      #LOOP_APNS_KEY: ""
+      #LOOP_APNS_KEY_ID: ""
       # The team ID of your apple developer account.
-      LOOP_DEVELOPER_TEAM_ID: ""
+      #LOOP_DEVELOPER_TEAM_ID: ""
       # LOOP_PUSH_SERVER_ENVIRONMENT: "production"
 
       # device info fields to show
@@ -90,4 +90,3 @@ services:
       - /mnt/docker_disk/mi_docker/mongodb:/data/db
     ports:
       - 27017:27017
-
