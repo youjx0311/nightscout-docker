@@ -30,7 +30,7 @@ services:
       # required for other plugins (i.e. upbat)
       DEVICESTATUS_ADVANCED: "true"
       # enable plugins
-      ENABLE: "bridge loop iob cob basal sage cage bage override dbsize careportal delta direction upbat timeago pump bwg rawbg devicestatus openaps"
+      ENABLE: "bridge loop food iob cob basal sage cage bage override dbsize careportal delta direction upbat timeago pump bwg rawbg devicestatus openaps"
       # tune BG target and alarm ranges (since nightscout 13.0.0 in *display* units)
       BG_HIGH: 10
       BG_TARGET_TOP: 10
