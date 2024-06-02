@@ -33,8 +33,8 @@ services:
       ENABLE: "bridge loop iob cob basal sage cage bage override dbsize careportal delta direction upbat timeago pump bwg rawbg devicestatus openaps"
       # tune BG target and alarm ranges (since nightscout 13.0.0 in *display* units)
       BG_HIGH: 10
-      BG_TARGET_TOP: 8
-      BG_TARGET_BOTTOM: 5
+      BG_TARGET_TOP: 10
+      BG_TARGET_BOTTOM: 4
       BG_LOW: 3.9
 
       # website title by default
