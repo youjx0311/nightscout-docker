@@ -38,7 +38,7 @@ services:
       BG_LOW: 3.9
 
       # website title by default
-      CUSTOM_TITLE: "Lex Docker"
+      CUSTOM_TITLE: "xiaoyou Docker"
       # use SI units by default
       DISPLAY_UNITS: "mmol/L"
       # use 24h time format by default
